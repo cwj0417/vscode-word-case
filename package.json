@@ -1,0 +1,97 @@
+{
+  "name": "word-case",
+  "displayName": "word-case",
+  "description": "unify your word case",
+  "repository": "https://github.com/cwj0417/vscode-word-case",
+  "version": "0.0.1",
+  "publisher": "cwj0417",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "word-case.camel-case",
+        "title": "camelCase"
+      },
+      {
+        "command": "word-case.cabab-case",
+        "title": "cabab-case"
+      },
+      {
+        "command": "word-case.pascal-case",
+        "title": "PascalCase"
+      },
+      {
+        "command": "word-case.snake-case",
+        "title": "snake_case"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "word.case",
+          "group": "navigation"
+        }
+      ],
+      "word.case": [
+        {
+          "command": "word-case.camel-case",
+          "group": "navigation"
+        },
+        {
+          "command": "word-case.cabab-case",
+          "group": "navigation"
+        },
+        {
+          "command": "word-case.pascal-case",
+          "group": "navigation"
+        },
+        {
+          "command": "word-case.snake-case",
+          "group": "navigation"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "label": "word case",
+        "id": "word.case"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.73.0",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "eslint": "^8.26.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.8.4",
+    "ts-loader": "^9.4.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "@vscode/test-electron": "^2.2.0"
+  }
+}
