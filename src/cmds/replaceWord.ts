@@ -1,6 +1,6 @@
 const camelReg = /\b[a-z]+([A-Z]{1}[a-z]+)+\b/g;
 const cababReg = /\b([a-z]+-)+[a-z]+\b/g;
-const pascalReg = /\b([A-Z]{1}[a-z]+)+\b/g;
+const pascalReg = /\b([A-Z]{1}[a-z]+){2,}\b/g;
 const snakeReg = /\b([a-z]+_)+[a-z]+\b/g;
 
 const join = (words: string[], type: 'camel' | 'cabab' | 'pascal' | 'snake') => {

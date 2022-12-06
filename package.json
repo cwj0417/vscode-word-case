@@ -3,7 +3,7 @@
   "displayName": "word-case",
   "description": "unify your word case",
   "repository": "https://github.com/cwj0417/vscode-word-case",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "cwj0417",
   "engines": {
     "vscode": "^1.73.0"
